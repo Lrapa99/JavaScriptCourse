@@ -34,3 +34,25 @@ const dog = new Animal("Luna","Hembra")
 console.log(dog);
 dog.sonar()
 dog.saludar()
+
+
+class gato extends Animal{
+  //con el metodo super() se manda a llamar el constructor de la calse padre
+  constructor(name, sexo, size){
+    super(name, sexo)
+    this.size = size  
+  }
+
+  sonar(){
+    console.log("Soy una gato");
+  }
+
+}
+
+
+const myCat = new gato("Pacho","Macho","Mediano")
+
+
+console.log(myCat);
+
+myCat.sonar()
