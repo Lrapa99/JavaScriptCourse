@@ -137,12 +137,53 @@ console.log(fecha.getUTCDate());
 console.log(fecha.getUTCHours());
 console.log(Date.now()); //time standard
 
-
-
 //saber cuando naci, aplicando  Date()
-const happy = new Date(1999,6,3)
+const happy = new Date(1999, 6, 3);
 console.log(happy);
-console.clear()
+console.clear();
 
 
+
+
+//Mis test
+
+class Animal{
+  constructor(name, genero, size){
+    this.name = name
+    this.genero = genero
+    this.size = size
+  }
+  saludar(){
+    console.log(`Hola soy ${this.name}, mi genero es ${this.genero} y tengo un tamano ${this.size}`);
+  }
+}
+
+
+
+
+const gato = new Animal('pacho','macho','mediano')
+
+
+console.log(gato);
+
+
+for (const props in gato) {
+console.log(props);
+}
+
+
+const myArreglo = []
+
+myArreglo.push(gato)
+
+
+console.log(myArreglo[0].name);
+console.log(myArreglo[0].genero);
+console.log(myArreglo[0].size);
+
+console.table(myArreglo)//*mostramos en una tabla el arreglo
+
+const saludo = myArreglo[0].saludar() //almacenamos el valor en una variable
+
+console.clear()//limpiamos la consola
 
