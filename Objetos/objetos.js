@@ -187,3 +187,94 @@ const saludo = myArreglo[0].saludar() //almacenamos el valor en una variable
 
 console.clear()//limpiamos la consola
 
+//* objeto estatico Math, y algunos metodos importantes
+
+console.log(Math);
+console.log(Math.PI);//numeros absolutos
+console.log(Math.abs(-7.8));//valor absoluto, sin importar si es un numero negativo
+console.log(Math.ceil(7.8));//* redondear valores flotantes, al numero entero mayor
+console.log(Math.floor(7.8));//* redondear valores flotantes, al numero entero menor
+console.log(Math.round(7.2));//* redondear valores flotantes, al numero mas cercano
+ 
+
+console.log(Math.sqrt(81)); //*sacar raiz cuadrada con Math
+console.log(Math.pow(2,5));//* calcular potencia
+console.log(Math.sign(5)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
+console.log(Math.sign(-87)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
+console.log(Math.sign(0)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
+
+console.log(Math.random()); //! nos arroja un valor aleatorio
+console.log(Math.random() * 100); //* operacion matematica con el valor aleatorio
+
+console.log(Math.round(Math.random() * 1000)); //! redondear numeros aleatorios multiplicados por 1000
+
+console.clear()
+
+
+//* operador de cortocircuito
+/* Cortocircuito con OR-- cuando el valor de la izquierda en la 
+expresion siempre pueda validar a TRUE , es el valor que se 
+cargara por defecto
+
+  Cortocircuito con AND-- cuando el valor de la izquierda en la 
+  expresion siempre pueda validar a FALSE, es el valor que se
+  cargara por defecto
+ */
+
+function saludando(youName){
+  youName = youName || 'Desconocido' //! cortocircuito OR
+  console.log(`Hello, my name is ${youName}`);
+}
+
+saludando()// Hello, my name is Desconocido
+saludando('Lrapa99') // Hello, my name is Lrapa99
+
+//* VALORES QUE TIENDES A VERDADERO
+
+console.log('Esto es una cadena' || 'Valor de la derecha');
+console.log(19 || 'Valor de la derecha');
+console.log(true || 'Valor de la derecha');
+console.log([] || 'Valor de la derecha');
+console.log({} || 'Valor de la derecha');
+console.log(19 || 'Valor de la derecha');
+console.log(-2 || 'Valor de la derecha');
+
+
+//* VALORES QUE TIENDES A FALSO
+
+console.log(false && 'Valor de la derecha');
+console.log(null && 'Valor de la derecha');
+console.log(undefined && 'Valor de la derecha');
+console.log('' && 'Valor de la derecha');
+console.log( 0 && 'Valor de la derecha');
+
+console.clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
