@@ -142,63 +142,54 @@ const happy = new Date(1999, 6, 3);
 console.log(happy);
 console.clear();
 
-
-
-
 //Mis test
 
-class Animal{
-  constructor(name, genero, size){
-    this.name = name
-    this.genero = genero
-    this.size = size
+class Animal {
+  constructor(name, genero, size) {
+    this.name = name;
+    this.genero = genero;
+    this.size = size;
   }
-  saludar(){
-    console.log(`Hola soy ${this.name}, mi genero es ${this.genero} y tengo un tamano ${this.size}`);
+  saludar() {
+    console.log(
+      `Hola soy ${this.name}, mi genero es ${this.genero} y tengo un tamano ${this.size}`
+    );
   }
 }
 
-
-
-
-const gato = new Animal('pacho','macho','mediano')
-
+const gato = new Animal("pacho", "macho", "mediano");
 
 console.log(gato);
 
-
 for (const props in gato) {
-console.log(props);
+  console.log(props);
 }
 
+const myArreglo = [];
 
-const myArreglo = []
-
-myArreglo.push(gato)
-
+myArreglo.push(gato);
 
 console.log(myArreglo[0].name);
 console.log(myArreglo[0].genero);
 console.log(myArreglo[0].size);
 
-console.table(myArreglo)//*mostramos en una tabla el arreglo
+console.table(myArreglo); //*mostramos en una tabla el arreglo
 
-const saludo = myArreglo[0].saludar() //almacenamos el valor en una variable
+const saludo = myArreglo[0].saludar(); //almacenamos el valor en una variable
 
-console.clear()//limpiamos la consola
+console.clear(); //limpiamos la consola
 
 //* objeto estatico Math, y algunos metodos importantes
 
 console.log(Math);
-console.log(Math.PI);//numeros absolutos
-console.log(Math.abs(-7.8));//valor absoluto, sin importar si es un numero negativo
-console.log(Math.ceil(7.8));//* redondear valores flotantes, al numero entero mayor
-console.log(Math.floor(7.8));//* redondear valores flotantes, al numero entero menor
-console.log(Math.round(7.2));//* redondear valores flotantes, al numero mas cercano
- 
+console.log(Math.PI); //numeros absolutos
+console.log(Math.abs(-7.8)); //valor absoluto, sin importar si es un numero negativo
+console.log(Math.ceil(7.8)); //* redondear valores flotantes, al numero entero mayor
+console.log(Math.floor(7.8)); //* redondear valores flotantes, al numero entero menor
+console.log(Math.round(7.2)); //* redondear valores flotantes, al numero mas cercano
 
 console.log(Math.sqrt(81)); //*sacar raiz cuadrada con Math
-console.log(Math.pow(2,5));//* calcular potencia
+console.log(Math.pow(2, 5)); //* calcular potencia
 console.log(Math.sign(5)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
 console.log(Math.sign(-87)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
 console.log(Math.sign(0)); //*valor absoluto, me indicara si el valor es positivo(1), negativo(-1) o cero(0)
@@ -208,8 +199,7 @@ console.log(Math.random() * 100); //* operacion matematica con el valor aleatori
 
 console.log(Math.round(Math.random() * 1000)); //! redondear numeros aleatorios multiplicados por 1000
 
-console.clear()
-
+console.clear();
 
 //* operador de cortocircuito
 /* Cortocircuito con OR-- cuando el valor de la izquierda en la 
@@ -221,60 +211,77 @@ cargara por defecto
   cargara por defecto
  */
 
-function saludando(youName){
-  youName = youName || 'Desconocido' //! cortocircuito OR
+function saludando(youName) {
+  youName = youName || "Desconocido"; //! cortocircuito OR
   console.log(`Hello, my name is ${youName}`);
 }
 
-saludando()// Hello, my name is Desconocido
-saludando('Lrapa99') // Hello, my name is Lrapa99
+saludando(); // Hello, my name is Desconocido
+saludando("Lrapa99"); // Hello, my name is Lrapa99
 
 //* VALORES QUE TIENDES A VERDADERO
 
-console.log('Esto es una cadena' || 'Valor de la derecha');
-console.log(19 || 'Valor de la derecha');
-console.log(true || 'Valor de la derecha');
-console.log([] || 'Valor de la derecha');
-console.log({} || 'Valor de la derecha');
-console.log(19 || 'Valor de la derecha');
-console.log(-2 || 'Valor de la derecha');
-
+console.log("Esto es una cadena" || "Valor de la derecha");
+console.log(19 || "Valor de la derecha");
+console.log(true || "Valor de la derecha");
+console.log([] || "Valor de la derecha");
+console.log({} || "Valor de la derecha");
+console.log(19 || "Valor de la derecha");
+console.log(-2 || "Valor de la derecha");
 
 //* VALORES QUE TIENDES A FALSO
 
-console.log(false && 'Valor de la derecha');
-console.log(null && 'Valor de la derecha');
-console.log(undefined && 'Valor de la derecha');
-console.log('' && 'Valor de la derecha');
-console.log( 0 && 'Valor de la derecha');
+console.log(false && "Valor de la derecha");
+console.log(null && "Valor de la derecha");
+console.log(undefined && "Valor de la derecha");
+console.log("" && "Valor de la derecha");
+console.log(0 && "Valor de la derecha");
 
-console.clear()
+console.clear();
 
+//* Alert, Confirm y Prompt
 
+//console.log(window);
 
+const opciones = {
+  alerta: () =>
+    window.alert("Hola esto es una alerta, por favor ingresa un valor"),
+  confirm: () =>
+    window.confirm(
+      "Hola esto es una confirmacion, por favor confirma para continuar"
+    ),
+  miValor: () =>
+    window.prompt(
+      "Hola este es un prompt y le permite al usuario ingresar un valor"
+    ),
+};
 
+//! esto es un ejemplo
 
+console.log(opciones); //mostramos el objeto
 
+window.alert("Bienvenido"); //mensaje de bienvenida
 
+opciones.alerta(); //mostramos una alerta
 
+const miNombre = "Luis"; //almacenamos en una variable mi nombre
 
+const valorCapturado = opciones.miValor(); //mostramos un prompt para capturar el valor
 
+if (valorCapturado) {
 
+  const confirmacion = opciones.confirm(); // mostramos la confirmacion
 
+if (confirmacion) {
+  if (valorCapturado === miNombre) {
+    window.alert(`Hola que tal, acabas de ingresar el valor correcto!!`);
+  } else {
+    window.alert(`Valor incorrecto!!`);
+  }
+} else {
+  window.alert('Operacion Abortada!!')
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} else {
+  window.alert('Operacion Abortada!!')
+}
