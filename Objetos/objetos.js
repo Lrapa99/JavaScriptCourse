@@ -299,13 +299,31 @@
 de busqueda principalmente utilizada para la 
 busquedad de pratrones de cadenas de caracteres */
 
-const cadena =
-  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium odio molestiae sunt temporibus repellat, tenetur eius quasi ipsum. Molestias dolore a odio obcaecati aliquam sed cupiditate omnis itaque iste?";
+// const cadena =
+//   "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium odio molestiae sunt temporibus repellat, tenetur eius quasi ipsum. Molestias dolore a odio obcaecati aliquam sed cupiditate omnis itaque iste?";
 
-const expReg = new RegExp('lorem','i'); // el segundo parametro, son las banderas, que nos permiten hacer una especie de filtro sobre la busquedad
-const expReg2 = /lorem/i // forma mas utilizada por los dev
+// const expReg = new RegExp('lorem','i'); // el segundo parametro, son las banderas, que nos permiten hacer una especie de filtro sobre la busquedad
+// const expReg2 = /lorem/i // forma mas utilizada por los dev
 
-console.log(expReg.test(cadena)); // devuelve un boolean true o false
-console.log(expReg.exec(cadena));// devuelve un arreglo con mas informacion
-console.log(expReg2.test(cadena)); // devuelve un boolean true o false
-console.log(expReg2.exec(cadena));// devuelve un arreglo con mas informacion
+// console.log(expReg.test(cadena)); // devuelve un boolean true o false
+// console.log(expReg.exec(cadena));// devuelve un arreglo con mas informacion
+// console.log(expReg2.test(cadena)); // devuelve un boolean true o false
+// console.log(expReg2.exec(cadena));// devuelve un arreglo con mas informacion
+
+//funcion anonima autoejecutable
+
+//alert('Soy una funcion que se autoejecuta')
+
+
+// (function(){
+// console.log('Mi primer IIFE');
+// })(); // si hay varias funciones anonimas autoejecutables , es importante que terminemos con puntos y comas (;)
+
+// (function (d,w,c){
+//   console.log('Soy una funcion autoejecutable, que para funcionar me deben poner dentro de parentesis');
+//   console.log(d);
+//   console.log(w);
+//   c.log('Este es un console.log')
+//   w.alert('Esta es una alerta')
+// })(document,window,console);
+
