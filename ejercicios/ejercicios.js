@@ -2,43 +2,44 @@ import { cadena } from "./1parte.js"; // importamos la constante cadena del modu
 
 //*ejercicio 1:
 console.log("Ejercicio #1");
-function contarCaracteresCadena(valor) {
-  console.log(`${cadena} y mi longitud es de ${cadena.length} caracteres`);
-}
+const  contarCaracteresCadena = (valor = '') => 
+!valor
+? console.warn('Por favor ingrese un valor')
+: console.log(`${valor} y mi longitud es de ${valor.length} caracteres`);
 
-contarCaracteresCadena(cadena);
+// contarCaracteresCadena();
+// contarCaracteresCadena(cadena);
 
 //*ejercicio 2:
 console.log("Ejercicio #2");
-function recortarCadena(valor) {
-  const cadenaRecortada = valor.slice(7); //extraemos los datos que deseamos de la cadena completa y guardamos su valor en una nueva variable
+const  recortarCadena = (valor = '', recortar = undefined) => 
+!valor
+? console.warn('Por favor ingrese un valor')
+: recortar === undefined 
+? console.error('Error, no se ingreso la cantidad de caracteres a recortar ')
+: console.log(`Cadena de texto recortada: ${valor.slice(recortar)}`); 
 
-  console.log(`Cadena de texto recortada: ${cadenaRecortada}`);
-}
 
-recortarCadena(cadena);
+//recortarCadena(cadena,4);
 
 //*ejercicio 3:
 console.log("Ejercicio #3");
-function arrayCadena(valor) {
-  const cadenaArreglo = valor.split(" ");
+const  arrayCadena = (valor = '')=> 
+!valor
+? console.warn('Por favor ingrese un valor')
+: console.log("Cadena de texto en array:", valor.split(" "));
 
-  console.log("Cadena de texto en array:", cadenaArreglo);
-}
-
-arrayCadena(cadena);
+// arrayCadena(cadena);
 
 //*ejercicio 4:
 console.log("Ejercicio #4");
-function repetirCadena(valor = null) {
-  if (valor == null || valor == "") {
-    console.log("Por favor ingrese un valor");
-  } else {
-    console.log("Cadenas repetidas:");
-    for (let i = 0; i < 3; i++) {
-      console.log(valor);
-    }
-  }
+
+const repetirCadena = (valor = '', veces = undefined) => {
+if(!valor) return console.warn('Por favor ingrese un valor')
+if(veces === undefined) return console.warn('Debe ingresar el numero de veces a repetir')
+if(veces === 0 ) return console.error('Error, el numero de veces a repetir debe ser mayor a 0')
+
+for(let i = 1; i <= veces; i++) console.log(valor , i);
 }
 
-repetirCadena("Hola");
+// repetirCadena('Hello Wordl',5);
