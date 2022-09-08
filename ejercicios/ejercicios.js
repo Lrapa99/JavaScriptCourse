@@ -2,7 +2,7 @@ import { cadena } from "./1parte.js"; // importamos la constante cadena del modu
 import { misConst } from "./2parte.js";
 
 //*ejercicio 1:
-console.log("Ejercicio #1");
+
 const contarCaracteresCadena = (valor = "") =>
   !valor
     ? console.warn("Por favor ingrese un valor")
@@ -12,7 +12,7 @@ const contarCaracteresCadena = (valor = "") =>
 // contarCaracteresCadena(cadena);
 
 //*ejercicio 2:
-console.log("Ejercicio #2");
+
 const recortarCadena = (valor = "", recortar = undefined) =>
   !valor
     ? console.warn("Por favor ingrese un valor")
@@ -25,7 +25,7 @@ const recortarCadena = (valor = "", recortar = undefined) =>
 //recortarCadena(cadena,4);
 
 //*ejercicio 3:
-console.log("Ejercicio #3");
+
 const arrayCadena = (valor = "") =>
   !valor
     ? console.warn("Por favor ingrese un valor")
@@ -34,7 +34,6 @@ const arrayCadena = (valor = "") =>
 // arrayCadena(cadena);
 
 //*ejercicio 4:
-console.log("Ejercicio #4");
 
 const repetirCadena = (valor = "", veces = undefined) => {
   if (!valor) return console.warn("Por favor ingrese un valor");
@@ -74,6 +73,77 @@ const invertirCadena = (valor = "") => {
 
 //invertirCadena(miValor);
 
-
 //*ejercicio 6:
 
+const cadenaRepetida = misConst.cadenaRepetida;
+
+const contarPalabrasRepetidas = (palabras = "", busquedad = undefined) => {
+  let contador = 0;
+  let posicion = 0;
+
+  if (!palabras) return console.warn("Debe ingresar una cadena de texto");
+  if (busquedad === undefined || !busquedad)
+    return console.error("No ingreso el valor de busquedad para contar");
+
+  while ((posicion = palabras.indexOf(busquedad, posicion)) !== -1) {
+    ++contador;
+
+    posicion += busquedad.length;
+  }
+
+  return console.log(
+    `La palabra "${busquedad}" ${
+      contador === 0
+        ? `NO existe`
+        : `se repite ${contador} ${contador === 1 ? `vez` : `veces`}`
+    } `
+  );
+};
+
+//contarPalabrasRepetidas(cadenaRepetida,'mundo');
+
+//*ejercicio 7:
+
+const palindromo = misConst.palindromo;
+
+const getPalindromo = (str = "") => {
+  if (!str) return console.warn("Por favor ingresa un valor");
+
+  let respuesta = /[\W_]/g;
+  let lowRegStr = str.toLowerCase().replace(respuesta, "");
+  let reverseStr = lowRegStr.split("").reverse().join("");
+
+  console.log(`Inicial: ${lowRegStr}`);
+  console.log(`Final: ${reverseStr}`);
+
+  return console.log(`Valor de Palindromo:`, reverseStr === lowRegStr);
+};
+
+// getPalindromo(palindromo);
+
+//*ejercicio 8:
+
+const eliminarCaracteres = misConst.eliminarCaracteres;
+
+const deleteCaracter = (str, palabraBusquedad) => {
+  if (!str) return console.warn("Por favor ingresa un valor");
+
+  if (!palabraBusquedad)
+    return console.error("No ingreso el patron a eliminar");
+
+  const escapeRegExp = (string) => {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  };
+
+  const reg = new RegExp(escapeRegExp(palabraBusquedad), "g");
+
+  //console.log(reg);
+
+  const nuevaStr = str.replace(reg, "");
+
+  console.log(`Cadena inicial: ${eliminarCaracteres}`);
+  console.log(`Valor eliminado: "${palabraBusquedad}"`);
+  console.log(`Cadena final: ${nuevaStr}`);
+};
+
+// deleteCaracter(eliminarCaracteres, "xyz");
