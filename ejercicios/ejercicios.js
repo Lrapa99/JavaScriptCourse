@@ -1,5 +1,6 @@
 import { cadena } from "./1parte.js"; // importamos la constante cadena del modulo 1parte
 import { misConst } from "./2parte.js";
+import { misNumeros } from "./3parte.js";
 
 //*ejercicio 1:
 
@@ -135,7 +136,7 @@ const deleteCaracter = (str, palabraBusquedad) => {
     return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   };
 
-  const reg = new RegExp(escapeRegExp(palabraBusquedad), "g");
+  const reg = new RegExp(escapeRegExp(palabraBusquedad), "ig");
 
   //console.log(reg);
 
@@ -146,4 +147,67 @@ const deleteCaracter = (str, palabraBusquedad) => {
   console.log(`Cadena final: ${nuevaStr}`);
 };
 
-// deleteCaracter(eliminarCaracteres, "xyz");
+//deleteCaracter(eliminarCaracteres, "xyz");
+
+//*ejercicio 9:
+
+const valorInicial = misNumeros.numerosAleatorios[0];
+const valorFinal = misNumeros.numerosAleatorios[1];
+
+const numerosAleatorios = (min = "", max = "") => {
+  if (!min || !max)
+    return console.error("Debe ingresar el valor inicial y el valor final");
+
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+  const aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+
+  console.log(`Un numero aleatorio entre: ${valorInicial} y ${valorFinal}`);
+
+  return console.log(`Valor Aleatorio: ${aleatorio}`);
+};
+
+// numerosAleatorios(valorInicial, valorFinal);
+
+//*ejercicio 10:
+
+const capicua = misNumeros.numeroCapicua;
+
+//console.log(capicua);
+
+const getCapicua = (numero = "") => {
+  if (!numero) return console.warn("Por favor ingresa un valor");
+
+  let reverseNum = numero.toString().split("").reverse().join("");
+
+  console.log(`Inicial: ${numero}`);
+  console.log(`Final: ${reverseNum}`);
+
+  return console.log(`Valor de Palindromo:`, numero.toString() === reverseNum);
+};
+
+// getCapicua(capicua);
+
+//*ejercicio 11:
+
+const factorial = misNumeros.numeroFactorial;
+
+// console.log(factorial);
+
+const getFactorial = (num = "") => {
+  
+  if (!num) return console.warn("Por favor ingrese un numero");
+
+  if (num === 0 || num === 1) return console.log("Factorizado:", 1);
+
+  console.log(`Valor ingresado: ${num}`);
+
+  for (let i = num - 1; i >= 1; i--) {
+    num *= i;
+  }
+
+  return console.log("Factorizado: ", num);
+};
+
+getFactorial(factorial);
