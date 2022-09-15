@@ -1,6 +1,7 @@
 import { cadena } from "./1parte.js"; // importamos la constante cadena del modulo 1parte
 import { misConst } from "./2parte.js";
 import { misNumeros } from "./3parte.js";
+import { parte4 } from "./4parte.js";
 
 //*ejercicio 1:
 
@@ -195,12 +196,15 @@ const factorial = misNumeros.numeroFactorial;
 
 // console.log(factorial);
 
-const getFactorial = (num = "") => {
+const getFactorial = (num = undefined) => {
   
-  if (!num) return console.warn("Por favor ingrese un numero");
+  if (num === undefined) return console.warn("NO ingresaste un numero");
 
-  if (num === 0 || num === 1) return console.log("Factorizado:", 1);
+  if (typeof num !== 'number') return console.error(`El valor "${num}" ingresado NO es un numero`);
 
+  if(num === 0 ) return console.error('El numero no puede ser 0');
+
+  if(Math.sign(num) === -1) return console.error('El numero NO puede ser negativo')
   console.log(`Valor ingresado: ${num}`);
 
   for (let i = num - 1; i >= 1; i--) {
@@ -210,4 +214,32 @@ const getFactorial = (num = "") => {
   return console.log("Factorizado: ", num);
 };
 
-getFactorial(factorial);
+// getFactorial(5);
+
+//*ejercicio 12:
+
+const primo = parte4.numeroPrimo;
+const noPrimo = parte4.numeroNoPrimo;
+
+console.log(primo, noPrimo);
+
+const getPrimoNoPrimo = (numero = undefined) => {
+  
+  if(numero === undefined) return console.warn('No ingresaste un numero')
+
+  if (typeof numero !== 'number') return console.error(`El valor "${numero}" ingresado NO es un numero`);
+
+  if(Math.sign(numero) === -1) return console.error('El numero NO puede ser negativo')
+
+  console.log(`Valor ingresado: ${numero}`);
+
+  if(numero === 0 || numero === 1 || numero === 4) return console.log('No es primo');;
+
+  for(let x = 2; x < numero / 2; x++){
+      if(numero % x === 0) return console.log('No es primo');;
+  }
+
+  return console.log('Si es primo');;
+}
+
+getPrimoNoPrimo(primo);
