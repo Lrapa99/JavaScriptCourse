@@ -11,8 +11,8 @@ const numeroPrimo = 13,
 const par = 8,
     impar = 7
 
-let gradosCelsius,
-    gradosFahrenheit
+let gradosCelsius = 29,
+    gradosFahrenheit = 29
 
 
 //*Exportando las variables

@@ -197,14 +197,15 @@ const factorial = misNumeros.numeroFactorial;
 // console.log(factorial);
 
 const getFactorial = (num = undefined) => {
-  
   if (num === undefined) return console.warn("NO ingresaste un numero");
 
-  if (typeof num !== 'number') return console.error(`El valor "${num}" ingresado NO es un numero`);
+  if (typeof num !== "number")
+    return console.error(`El valor "${num}" ingresado NO es un numero`);
 
-  if(num === 0 ) return console.error('El numero no puede ser 0');
+  if (num === 0) return console.error("El numero no puede ser 0");
 
-  if(Math.sign(num) === -1) return console.error('El numero NO puede ser negativo')
+  if (Math.sign(num) === -1)
+    return console.error("El numero NO puede ser negativo");
   console.log(`Valor ingresado: ${num}`);
 
   for (let i = num - 1; i >= 1; i--) {
@@ -221,25 +222,96 @@ const getFactorial = (num = undefined) => {
 const primo = parte4.numeroPrimo;
 const noPrimo = parte4.numeroNoPrimo;
 
-console.log(primo, noPrimo);
+//console.log(primo, noPrimo);
 
 const getPrimoNoPrimo = (numero = undefined) => {
-  
-  if(numero === undefined) return console.warn('No ingresaste un numero')
+  if (numero === undefined) return console.warn("No ingresaste un numero");
 
-  if (typeof numero !== 'number') return console.error(`El valor "${numero}" ingresado NO es un numero`);
+  if (typeof numero !== "number")
+    return console.error(`El valor "${numero}" ingresado NO es un numero`);
 
-  if(Math.sign(numero) === -1) return console.error('El numero NO puede ser negativo')
+  if (Math.sign(numero) === -1)
+    return console.error("El numero NO puede ser negativo");
 
   console.log(`Valor ingresado: ${numero}`);
 
-  if(numero === 0 || numero === 1 || numero === 4) return console.log('No es primo');;
+  if (numero === 0 || numero === 1 || numero === 4)
+    return console.log("No es primo");
 
-  for(let x = 2; x < numero / 2; x++){
-      if(numero % x === 0) return console.log('No es primo');;
+  for (let x = 2; x < numero / 2; x++) {
+    if (numero % x === 0) return console.log("No es primo");
   }
 
-  return console.log('Si es primo');;
-}
+  return console.log("Si es primo");
+};
 
-getPrimoNoPrimo(primo);
+// getPrimoNoPrimo(primo);
+// getPrimoNoPrimo(noPrimo);
+
+//*ejercicio 13:
+
+const par = parte4.par;
+const impar = parte4.impar;
+
+//console.log(par, impar);
+
+const getParImpar = (num = undefined) => {
+  if (num === 0) return console.error("El numero debe ser mayor a 0");
+
+  if (!num) return console.warn("Por favor ingrese un numero");
+
+  if (typeof num !== "number")
+    return console.error("El valor ingresado no es un numero");
+
+  if (num % 2 !== 0) return console.log(`El numero ${num}, es IMPAR`);
+
+  return console.log(`El numero ${num}, es PAR`);
+};
+
+// getParImpar(par); //8 par
+//  getParImpar(impar); //7 impar
+
+//*ejercicio 14:
+
+const gradosCelsius = parte4.gradosCelsius;
+
+const gradosFahrenheit = parte4.gradosFahrenheit;
+
+console.log(gradosCelsius, gradosFahrenheit);
+
+const getGrados = (grados = '', tipo = "") => {
+
+  if (grados === '') return console.warn("Por favor ingrese un numero");
+
+  if (!tipo) return console.error("No ingresaste el tipo a convertir");
+
+  if (typeof grados !== "number")
+    return console.error("El valor ingresado no es un numero");
+
+  if (typeof tipo !== "string")
+    return console.error("El valor del tipo a convertir debe ser un string");
+
+  /*
+    Para convertir de ºC a ºF use la fórmula:   ºF = ºC x 1.8 + 32.
+    Para convertir de ºF a ºC use la fórmula:   ºC = (ºF-32) ÷ 1.8.
+ */
+
+  const minusTipo = tipo.toLowerCase();
+
+  if (minusTipo !== "c" && minusTipo !== "f")
+    return console.error("Tipo de conversion NO valido");
+
+    const Fahrenheit = (grados * 1.8) + 32;
+
+    const celsius = (grados - 32) / 1.8;
+
+
+    const resultado = minusTipo === 'c' ? `${Fahrenheit} ºF` : `${celsius} ºC`
+
+      console.log(resultado);
+
+};
+
+getGrados(gradosCelsius,'c');
+getGrados(gradosFahrenheit,'f');
+
