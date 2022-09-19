@@ -277,7 +277,7 @@ const gradosCelsius = parte4.gradosCelsius;
 
 const gradosFahrenheit = parte4.gradosFahrenheit;
 
-console.log(gradosCelsius, gradosFahrenheit);
+//console.log(gradosCelsius, gradosFahrenheit);
 
 const getGrados = (grados = '', tipo = "") => {
 
@@ -301,9 +301,9 @@ const getGrados = (grados = '', tipo = "") => {
   if (minusTipo !== "c" && minusTipo !== "f")
     return console.error("Tipo de conversion NO valido");
 
-    const Fahrenheit = (grados * 1.8) + 32;
+    const Fahrenheit = Math.round((grados * 1.8) + 32);
 
-    const celsius = (grados - 32) / 1.8;
+    const celsius = Math.round((grados - 32) / 1.8);
 
 
     const resultado = minusTipo === 'c' ? `${Fahrenheit} ºF` : `${celsius} ºC`
@@ -312,6 +312,6 @@ const getGrados = (grados = '', tipo = "") => {
 
 };
 
-getGrados(gradosCelsius,'c');
-getGrados(gradosFahrenheit,'f');
+//  getGrados(gradosCelsius,'c');
+//  getGrados(gradosFahrenheit,'f');
 
