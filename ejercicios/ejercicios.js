@@ -2,6 +2,7 @@ import { cadena } from "./1parte.js"; // importamos la constante cadena del modu
 import { misConst } from "./2parte.js";
 import { misNumeros } from "./3parte.js";
 import { parte4 } from "./4parte.js";
+import { parte5 } from "./parte5.js";
 
 //*ejercicio 1:
 
@@ -279,9 +280,8 @@ const gradosFahrenheit = parte4.gradosFahrenheit;
 
 //console.log(gradosCelsius, gradosFahrenheit);
 
-const getGrados = (grados = '', tipo = "") => {
-
-  if (grados === '') return console.warn("Por favor ingrese un numero");
+const getGrados = (grados = "", tipo = "") => {
+  if (grados === "") return console.warn("Por favor ingrese un numero");
 
   if (!tipo) return console.error("No ingresaste el tipo a convertir");
 
@@ -301,17 +301,112 @@ const getGrados = (grados = '', tipo = "") => {
   if (minusTipo !== "c" && minusTipo !== "f")
     return console.error("Tipo de conversion NO valido");
 
-    const Fahrenheit = Math.round((grados * 1.8) + 32);
+  const Fahrenheit = Math.round(grados * 1.8 + 32);
 
-    const celsius = Math.round((grados - 32) / 1.8);
+  const celsius = Math.round((grados - 32) / 1.8);
 
+  const resultado = minusTipo === "c" ? `${Fahrenheit} ºF` : `${celsius} ºC`;
 
-    const resultado = minusTipo === 'c' ? `${Fahrenheit} ºF` : `${celsius} ºC`
-
-      console.log(resultado);
-
+  console.log(resultado);
 };
 
 //  getGrados(gradosCelsius,'c');
 //  getGrados(gradosFahrenheit,'f');
 
+//*ejercicio 15:
+
+//*ejercicio 16:
+
+const monto = parte5.monto;
+
+const descuento = parte5.descuento;
+
+//console.log(monto, descuento);
+
+const getMontoFinal = (valor = undefined, desc = undefined) => {
+  if (valor === undefined || !valor)
+    return console.warn("Por favor ingresa un valor");
+  if (desc === undefined || !desc)
+    return console.error("No ingresaste el porcentaje % de descuento");
+  if (typeof valor !== "number" || typeof desc !== "number")
+    return console.error("El valor ingresado no es un numero");
+  if (valor === 0 || desc === 0)
+    return console.error("El numero debe ser mayor a 0");
+  if (Math.sign(valor) === -1 || Math.sign(desc) === -1)
+    return console.error("El numero NO puede ser negativo");
+
+  const valorDescuento = valor * (desc / 100);
+
+  const montoTotal = valor - valorDescuento;
+
+  console.log(
+    `Valor ingresado: ${valor} , Descuento aplicado: ${desc}% , Monto Toltal: ${montoTotal}`
+  );
+};
+
+// getMontoFinal(monto, descuento);
+
+//*ejercicio 17:
+
+const { year, mount, day } = parte5.newFecha; //destructuracion del objeto
+
+//console.log(year, mount, day);
+
+const getYearTrans = (y = undefined, m = undefined, d = undefined) => {
+  if (y === undefined || m === undefined || d === undefined)
+    return console.warn("Debes ingresar year , mount , day para calcular");
+
+  if (typeof y !== "number" || typeof m !== "number" || typeof d !== "number")
+    return console.error("El valor ingresado no es un numero");
+
+  // let nac = new Date(y, m, d);
+  // let tiempoTranscurrido = Date.now();
+  // let hoy = new Date(tiempoTranscurrido);
+  // let tiempoPasado = hoy - nac;
+  // let segs = 1000;
+  // let mins = segs * 60;
+  // let hours = mins * 60;
+  // let days = hours * 24;
+  // let months = days * 30.416666666666668;
+  // let years = months * 12;
+
+  const calculos = {
+    nac: new Date(y, m, d),
+    tiempoTranscurrido: Date.now(),
+    hoy: function () {
+      return new Date(this.tiempoTranscurrido);
+    },
+    tiempoPasado: function () {
+      return this.hoy() - this.nac;
+    },
+    segs: 1000,
+    mins: function () {
+      return this.segs * 60;
+    },
+    hours: function () {
+      return this.mins() * 60;
+    },
+    days: function () {
+      return this.hours() * 24;
+    },
+    months: function () {
+      return this.days() * 30.416666666666668;
+    },
+    years: function () {
+      return this.months() * 12;
+    },
+  };
+
+  //calculo
+  let totalYears = Math.floor(calculos.tiempoPasado() / calculos.years());
+
+  //console.log(totalYears);
+
+  console.log(
+    `Desde la fecha: ${year}/${mount}/${day}, hasta hoy: ${calculos
+      .hoy()
+      .toDateString()}, han transcurrido: ${totalYears} años`
+  );
+};
+
+getYearTrans(year, mount, day);
