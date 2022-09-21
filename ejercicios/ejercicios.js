@@ -58,7 +58,9 @@ const repetirCadena = (valor = "", veces = undefined) => {
 
 //console.log(misConst);
 
-const miValor = misConst.cadenaTexto;
+const {cadenaTexto: miValor} = misConst;
+
+//console.log(miValor);
 
 const invertirCadena = (valor = "") => {
   if (!valor) return console.warn("Por favor ingrese un valor");
@@ -78,7 +80,9 @@ const invertirCadena = (valor = "") => {
 
 //*ejercicio 6:
 
-const cadenaRepetida = misConst.cadenaRepetida;
+const {cadenaRepetida} = misConst;
+
+//console.log(cadenaRepetida);
 
 const contarPalabrasRepetidas = (palabras = "", busquedad = undefined) => {
   let contador = 0;
@@ -107,7 +111,9 @@ const contarPalabrasRepetidas = (palabras = "", busquedad = undefined) => {
 
 //*ejercicio 7:
 
-const palindromo = misConst.palindromo;
+const {palindromo} = misConst;
+
+//console.log(palindromo);
 
 const getPalindromo = (str = "") => {
   if (!str) return console.warn("Por favor ingresa un valor");
@@ -126,7 +132,9 @@ const getPalindromo = (str = "") => {
 
 //*ejercicio 8:
 
-const eliminarCaracteres = misConst.eliminarCaracteres;
+const {eliminarCaracteres} = misConst;
+
+//console.log(eliminarCaracteres);
 
 const deleteCaracter = (str, palabraBusquedad) => {
   if (!str) return console.warn("Por favor ingresa un valor");
@@ -156,6 +164,9 @@ const deleteCaracter = (str, palabraBusquedad) => {
 const valorInicial = misNumeros.numerosAleatorios[0];
 const valorFinal = misNumeros.numerosAleatorios[1];
 
+
+//console.log(valorInicial, valorFinal);
+
 const numerosAleatorios = (min = "", max = "") => {
   if (!min || !max)
     return console.error("Debe ingresar el valor inicial y el valor final");
@@ -174,7 +185,7 @@ const numerosAleatorios = (min = "", max = "") => {
 
 //*ejercicio 10:
 
-const capicua = misNumeros.numeroCapicua;
+const {numeroCapicua: capicua} = misNumeros;
 
 //console.log(capicua);
 
@@ -193,9 +204,9 @@ const getCapicua = (numero = "") => {
 
 //*ejercicio 11:
 
-const factorial = misNumeros.numeroFactorial;
+const {numeroFactorial : factorial} = misNumeros;
 
-// console.log(factorial);
+//console.log(factorial);
 
 const getFactorial = (num = undefined) => {
   if (num === undefined) return console.warn("NO ingresaste un numero");
@@ -220,8 +231,7 @@ const getFactorial = (num = undefined) => {
 
 //*ejercicio 12:
 
-const primo = parte4.numeroPrimo;
-const noPrimo = parte4.numeroNoPrimo;
+const {primo, noPrimo} = parte4;
 
 //console.log(primo, noPrimo);
 
@@ -251,8 +261,8 @@ const getPrimoNoPrimo = (numero = undefined) => {
 
 //*ejercicio 13:
 
-const par = parte4.par;
-const impar = parte4.impar;
+const {par, impar} = parte4
+
 
 //console.log(par, impar);
 
@@ -274,9 +284,7 @@ const getParImpar = (num = undefined) => {
 
 //*ejercicio 14:
 
-const gradosCelsius = parte4.gradosCelsius;
-
-const gradosFahrenheit = parte4.gradosFahrenheit;
+const {gradosCelsius, gradosFahrenheit} = parte4
 
 //console.log(gradosCelsius, gradosFahrenheit);
 
@@ -315,11 +323,33 @@ const getGrados = (grados = "", tipo = "") => {
 
 //*ejercicio 15:
 
+const {binario, decimal, valor} = parte5
+
+//console.log(binario, decimal, valor);
+
+
+const getBinarioDecimal = (numero = undefined, base = undefined)=>{
+
+  if (numero === undefined) return console.warn("No ingresaste un numero a convertir");
+  if(typeof numero !== 'number') return console.error('El valor ingresado NO es un numero')
+  if(base === undefined) return console.warn('No ingresaste la base a convertir')
+  if(typeof base !== 'number') return console.error('El valor ingresado NO es un numero')
+  if(base === 2){
+    return console.info(`${numero} Base: ${base} = ${parseInt(numero,base)} Base 10`)
+  }else if(base === 10){
+    return console.info(`${numero} Base: ${base} = ${numero.toString(2)} Base 2`)
+  }else{
+    return console.error('El tipo de base a convertir NO es valido')
+  }
+
+}
+// getBinarioDecimal(valor,binario)
+// getBinarioDecimal(valor,decimal)
+
+
 //*ejercicio 16:
 
-const monto = parte5.monto;
-
-const descuento = parte5.descuento;
+const {monto, descuento} = parte5
 
 //console.log(monto, descuento);
 
@@ -409,4 +439,4 @@ const getYearTrans = (y = undefined, m = undefined, d = undefined) => {
   );
 };
 
-getYearTrans(year, mount, day);
+//getYearTrans(year, mount, day);

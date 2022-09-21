@@ -4,8 +4,9 @@
 
 
 
-const binario = 100,
-    decimal = 200
+const binario = 2,
+    decimal = 10,
+    valor = 100
 
 
 const monto = 1000,
@@ -23,6 +24,7 @@ export const parte5 = {
     decimal,
     monto,
     descuento,
-    newFecha
+    newFecha,
+    valor
 }
 
