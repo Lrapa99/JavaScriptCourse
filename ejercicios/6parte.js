@@ -5,3 +5,15 @@
 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 
  */
+
+const vocalesConsonantes = 'hola mundo',
+    nameValidate = 'luis rapalino',
+    emailValidate = 'lrapa99@gmail.com'
+
+
+export const parte6 = {
+    vocalesConsonantes,
+    nameValidate,
+    emailValidate
+}
+

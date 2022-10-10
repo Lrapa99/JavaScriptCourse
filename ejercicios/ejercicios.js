@@ -3,6 +3,7 @@ import { misConst } from "./2parte.js";
 import { misNumeros } from "./3parte.js";
 import { parte4 } from "./4parte.js";
 import { parte5 } from "./parte5.js";
+import { parte6 } from "./6parte.js";
 
 //*ejercicio 1:
 
@@ -58,7 +59,7 @@ const repetirCadena = (valor = "", veces = undefined) => {
 
 //console.log(misConst);
 
-const {cadenaTexto: miValor} = misConst;
+const { cadenaTexto: miValor } = misConst;
 
 //console.log(miValor);
 
@@ -80,7 +81,7 @@ const invertirCadena = (valor = "") => {
 
 //*ejercicio 6:
 
-const {cadenaRepetida} = misConst;
+const { cadenaRepetida } = misConst;
 
 //console.log(cadenaRepetida);
 
@@ -111,7 +112,7 @@ const contarPalabrasRepetidas = (palabras = "", busquedad = undefined) => {
 
 //*ejercicio 7:
 
-const {palindromo} = misConst;
+const { palindromo } = misConst;
 
 //console.log(palindromo);
 
@@ -132,7 +133,7 @@ const getPalindromo = (str = "") => {
 
 //*ejercicio 8:
 
-const {eliminarCaracteres} = misConst;
+const { eliminarCaracteres } = misConst;
 
 //console.log(eliminarCaracteres);
 
@@ -164,7 +165,6 @@ const deleteCaracter = (str, palabraBusquedad) => {
 const valorInicial = misNumeros.numerosAleatorios[0];
 const valorFinal = misNumeros.numerosAleatorios[1];
 
-
 //console.log(valorInicial, valorFinal);
 
 const numerosAleatorios = (min = "", max = "") => {
@@ -185,7 +185,7 @@ const numerosAleatorios = (min = "", max = "") => {
 
 //*ejercicio 10:
 
-const {numeroCapicua: capicua} = misNumeros;
+const { numeroCapicua: capicua } = misNumeros;
 
 //console.log(capicua);
 
@@ -204,7 +204,7 @@ const getCapicua = (numero = "") => {
 
 //*ejercicio 11:
 
-const {numeroFactorial : factorial} = misNumeros;
+const { numeroFactorial: factorial } = misNumeros;
 
 //console.log(factorial);
 
@@ -231,7 +231,7 @@ const getFactorial = (num = undefined) => {
 
 //*ejercicio 12:
 
-const {primo, noPrimo} = parte4;
+const { primo, noPrimo } = parte4;
 
 //console.log(primo, noPrimo);
 
@@ -261,8 +261,7 @@ const getPrimoNoPrimo = (numero = undefined) => {
 
 //*ejercicio 13:
 
-const {par, impar} = parte4
-
+const { par, impar } = parte4;
 
 //console.log(par, impar);
 
@@ -284,7 +283,7 @@ const getParImpar = (num = undefined) => {
 
 //*ejercicio 14:
 
-const {gradosCelsius, gradosFahrenheit} = parte4
+const { gradosCelsius, gradosFahrenheit } = parte4;
 
 //console.log(gradosCelsius, gradosFahrenheit);
 
@@ -323,33 +322,37 @@ const getGrados = (grados = "", tipo = "") => {
 
 //*ejercicio 15:
 
-const {binario, decimal, valor} = parte5
+const { binario, decimal, valor } = parte5;
 
 //console.log(binario, decimal, valor);
 
-
-const getBinarioDecimal = (numero = undefined, base = undefined)=>{
-
-  if (numero === undefined) return console.warn("No ingresaste un numero a convertir");
-  if(typeof numero !== 'number') return console.error('El valor ingresado NO es un numero')
-  if(base === undefined) return console.warn('No ingresaste la base a convertir')
-  if(typeof base !== 'number') return console.error('El valor ingresado NO es un numero')
-  if(base === 2){
-    return console.info(`${numero} Base: ${base} = ${parseInt(numero,base)} Base 10`)
-  }else if(base === 10){
-    return console.info(`${numero} Base: ${base} = ${numero.toString(2)} Base 2`)
-  }else{
-    return console.error('El tipo de base a convertir NO es valido')
+const getBinarioDecimal = (numero = undefined, base = undefined) => {
+  if (numero === undefined)
+    return console.warn("No ingresaste un numero a convertir");
+  if (typeof numero !== "number")
+    return console.error("El valor ingresado NO es un numero");
+  if (base === undefined)
+    return console.warn("No ingresaste la base a convertir");
+  if (typeof base !== "number")
+    return console.error("El valor ingresado NO es un numero");
+  if (base === 2) {
+    return console.info(
+      `${numero} Base: ${base} = ${parseInt(numero, base)} Base 10`
+    );
+  } else if (base === 10) {
+    return console.info(
+      `${numero} Base: ${base} = ${numero.toString(2)} Base 2`
+    );
+  } else {
+    return console.error("El tipo de base a convertir NO es valido");
   }
-
-}
+};
 // getBinarioDecimal(valor,binario)
 // getBinarioDecimal(valor,decimal)
 
-
 //*ejercicio 16:
 
-const {monto, descuento} = parte5
+const { monto, descuento } = parte5;
 
 //console.log(monto, descuento);
 
@@ -440,3 +443,84 @@ const getYearTrans = (y = undefined, m = undefined, d = undefined) => {
 };
 
 //getYearTrans(year, mount, day);
+
+//*ejercicio 18:
+
+const { vocalesConsonantes, nameValidate, emailValidate } = parte6;
+
+console.log(vocalesConsonantes, nameValidate, emailValidate);
+
+const getVocalesAndConsonantes = (cadena = undefined) => {
+  if (cadena === undefined || cadena === "") {
+    return console.warn("Por favor ingrese una cadena de texto");
+  }
+  if (typeof cadena !== "string") {
+    return console.error(`El valor ${cadena}, NO es una cadena de texto`);
+  }
+  if (cadena.match(/[0123456789]/g)) {
+    return console.error(`El valor ${cadena}, NO es una cadena de texto`);
+  }
+  const numeroVocales = cadena.match(/[aeiou]/gi);
+  const numeroConsonantes = cadena.match(/[bcdfghjklmnñpqrstvwxyz]/gi);
+
+  console.log(`
+  Cadena: ${cadena}
+  Vocales: ${numeroVocales.length}: [${numeroVocales}] 
+  Consonantes: ${numeroConsonantes.length}: [${numeroConsonantes}]
+  `);
+};
+
+// getVocalesAndConsonantes();
+// getVocalesAndConsonantes(878778);
+// getVocalesAndConsonantes("7376336");
+// getVocalesAndConsonantes("737633jhdjhdhioeoe6");
+// getVocalesAndConsonantes(vocalesConsonantes);
+
+//*ejercicio 19:
+
+const getNameValidation = (name = undefined) => {
+  if (name === undefined || name === "") {
+    return console.warn("Por favor ingrese su nombre");
+  }
+
+  if (typeof name !== "string") {
+    return console.error(`El valor ${name}, NO es un nombre valido`);
+  }
+
+  if (name.match(/[0123456789]/g)) {
+    return console.error(`El valor ${name}, NO es un nombre valido`);
+  }
+
+  console.info(`El nombre: ${name}, es valido`);
+};
+
+// getNameValidation()
+// getNameValidation(8776876)
+// getNameValidation('364647637')
+// getNameValidation(nameValidate)
+
+//*ejercicio 20:
+
+const getEmailValidation = (mail = undefined) => {
+  if (mail === undefined || mail === "") {
+    return console.warn("Por favor ingrese su correo");
+  }
+
+  function validar_email(email) {
+    const regex =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email) ? true : false;
+  }
+
+  if (validar_email(mail)) {
+    console.log(`El valor: ${mail}, SI es un correo valido`);
+  } else {
+    console.log(`El valor: ${mail}, NO es un correo`);
+  }
+};
+
+getEmailValidation();
+getEmailValidation(38483747);
+getEmailValidation("868664545");
+getEmailValidation("lrapa.com");
+getEmailValidation(emailValidate);
