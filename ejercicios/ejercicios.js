@@ -448,7 +448,7 @@ const getYearTrans = (y = undefined, m = undefined, d = undefined) => {
 
 const { vocalesConsonantes, nameValidate, emailValidate } = parte6;
 
-console.log(vocalesConsonantes, nameValidate, emailValidate);
+//console.log(vocalesConsonantes, nameValidate, emailValidate);
 
 const getVocalesAndConsonantes = (cadena = undefined) => {
   if (cadena === undefined || cadena === "") {
@@ -463,11 +463,11 @@ const getVocalesAndConsonantes = (cadena = undefined) => {
   const numeroVocales = cadena.match(/[aeiou]/gi);
   const numeroConsonantes = cadena.match(/[bcdfghjklmnñpqrstvwxyz]/gi);
 
-  console.log(`
-  Cadena: ${cadena}
-  Vocales: ${numeroVocales.length}: [${numeroVocales}] 
-  Consonantes: ${numeroConsonantes.length}: [${numeroConsonantes}]
-  `);
+  console.log({
+    cadena,
+    numeroVocales,
+    numeroConsonantes
+  });
 };
 
 // getVocalesAndConsonantes();
@@ -478,25 +478,23 @@ const getVocalesAndConsonantes = (cadena = undefined) => {
 
 //*ejercicio 19:
 
-const getNameValidation = (name = undefined) => {
-  if (name === undefined || name === "") {
-    return console.warn("Por favor ingrese su nombre");
-  }
+const getNameValidation = (name = '') => {
+  if (!name ) return console.warn("Por favor ingrese su nombre");
+  
+  if (typeof name !== "string") return console.error(`El valor ${name}, NO es un nombre valido`);
+  
 
-  if (typeof name !== "string") {
-    return console.error(`El valor ${name}, NO es un nombre valido`);
-  }
+  let expReg = /^[A-Za-zñáéíóú\s]+$/gi.test(name)
 
-  if (name.match(/[0123456789]/g)) {
-    return console.error(`El valor ${name}, NO es un nombre valido`);
-  }
-
-  console.info(`El nombre: ${name}, es valido`);
+  return (expReg)
+  ? console.info(`El nombre: ${name}, SI es valido`)
+  : console.warn(`El nombre: ${name}, NO es valido`)
 };
 
 // getNameValidation()
 // getNameValidation(8776876)
 // getNameValidation('364647637')
+// getNameValidation('luis,88')
 // getNameValidation(nameValidate)
 
 //*ejercicio 20:
@@ -508,19 +506,23 @@ const getEmailValidation = (mail = undefined) => {
 
   function validar_email(email) {
     const regex =
-      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
     return regex.test(email) ? true : false;
   }
 
   if (validar_email(mail)) {
-    console.log(`El valor: ${mail}, SI es un correo valido`);
+    console.info(`El valor: ${mail}, SI es un correo valido`);
   } else {
-    console.log(`El valor: ${mail}, NO es un correo`);
+    console.error(`El valor: ${mail}, NO es un correo`);
   }
 };
 
-getEmailValidation();
-getEmailValidation(38483747);
-getEmailValidation("868664545");
-getEmailValidation("lrapa.com");
-getEmailValidation(emailValidate);
+// getEmailValidation();
+// getEmailValidation(38483747);
+// getEmailValidation("868664545");
+// getEmailValidation("lrapa.com");
+// getEmailValidation("lr,a,pa@gmail");
+// getEmailValidation(emailValidate);
+
+
+
