@@ -1,9 +1,9 @@
-import { cadena } from "./1parte.js"; // importamos la constante cadena del modulo 1parte
-import { misConst } from "./2parte.js";
-import { misNumeros } from "./3parte.js";
-import { parte4 } from "./4parte.js";
-import { parte5 } from "./parte5.js";
-import { parte6 } from "./6parte.js";
+// // import { cadena } from "./1parte.js"; // importamos la constante cadena del modulo 1parte
+// import { misConst } from "./2parte.js";
+// import { misNumeros } from "./3parte.js";
+// import { parte4 } from "./4parte.js";
+// import { parte5 } from "./parte5.js";
+// import { parte6 } from "./6parte.js";
 
 //*ejercicio 1:
 
@@ -466,7 +466,7 @@ const getVocalesAndConsonantes = (cadena = undefined) => {
   console.log({
     cadena,
     numeroVocales,
-    numeroConsonantes
+    numeroConsonantes,
   });
 };
 
@@ -478,17 +478,17 @@ const getVocalesAndConsonantes = (cadena = undefined) => {
 
 //*ejercicio 19:
 
-const getNameValidation = (name = '') => {
-  if (!name ) return console.warn("Por favor ingrese su nombre");
-  
-  if (typeof name !== "string") return console.error(`El valor ${name}, NO es un nombre valido`);
-  
+const getNameValidation = (name = "") => {
+  if (!name) return console.warn("Por favor ingrese su nombre");
 
-  let expReg = /^[A-Za-zñáéíóú\s]+$/gi.test(name)
+  if (typeof name !== "string")
+    return console.error(`El valor ${name}, NO es un nombre valido`);
 
-  return (expReg)
-  ? console.info(`El nombre: ${name}, SI es valido`)
-  : console.warn(`El nombre: ${name}, NO es valido`)
+  let expReg = /^[A-Za-zñáéíóú\s]+$/gi.test(name);
+
+  return expReg
+    ? console.info(`El nombre: ${name}, SI es valido`)
+    : console.warn(`El nombre: ${name}, NO es valido`);
 };
 
 // getNameValidation()
@@ -506,7 +506,7 @@ const getEmailValidation = (mail = undefined) => {
 
   function validar_email(email) {
     const regex =
-    /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
+      /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
     return regex.test(email) ? true : false;
   }
 
@@ -523,6 +523,3 @@ const getEmailValidation = (mail = undefined) => {
 // getEmailValidation("lrapa.com");
 // getEmailValidation("lr,a,pa@gmail");
 // getEmailValidation(emailValidate);
-
-
-

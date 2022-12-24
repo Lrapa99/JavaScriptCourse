@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" data-dark>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios del DOM</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+    />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dom_ejercicios.css" />
+  </head>
+  <body data-dark>
+    <header class="header">
+      <h1>Ejercicios del DOM</h1>
+    </header>
+    <button class="panel-btn hamburger hamburger--vortex" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <aside class="panel">
+      <nav class="menu">
+        <a href="#seccion1" data-scroll-spy>Reloj Digital y Alarma Sonora</a>
+        <a href="#seccion2" data-scroll-spy>Eventos del Teclado</a>
+        <a href="#seccion3" data-scroll-spy>Cuenta Regresiva</a>
+        <a href="#seccion4" data-scroll-spy>Responsive con JavaScript</a>
+        <a href="#seccion5" data-scroll-spy>Responsive Tester</a>
+        <a href="#seccion6" data-scroll-spy
+          >Detección de Dispositivos (User Agent)</a
+        >
+        <a href="#seccion7" data-scroll-spy>Detección del estado de la red</a>
+        <a href="#seccion8" data-scroll-spy>Detección de la WebCam</a>
+        <a href="#seccion9" data-scroll-spy>Detección de la Geolocalización</a>
+        <a href="#seccion10" data-scroll-spy>Filtros de Búsqueda</a>
+        <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
+        <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
+        <a href="#seccion13" data-scroll-spy>Seccion 13</a>
+        <a href="#seccion14" data-scroll-spy>Seccion 14</a>
+        <a href="#seccion15" data-scroll-spy>Seccion 15</a>
+      </nav>
+    </aside>
+    <main>
+      <section id="seccion1" class="section" data-scroll-spy>
+        <h2>Reloj Digital⌚ y Alarma Sonora ⏲️</h2>
+        <div id="reloj"></div>
+        <div>
+          <button class="btn" id="activar-reloj">Iniciar Reloj</button>
+          <button class="btn" id="desactivar-reloj">Detener Reloj</button>
+          <button class="btn" id="activar-alarma">Iniciar Alarma</button>
+          <button class="btn" id="desactivar-alarma">Detener Alarma</button>
+        </div>
+      </section>
+      <section id="seccion2" class="section" data-scroll-spy>
+        <h2>Eventos del Teclado ⌨️</h2>
+        <article class="stage"><div class="ball">⚽</div></article>
+      </section>
+      <section id="seccion3" class="section" data-scroll-spy>
+        <h2>Cuenta Regresiva 🔙🕘</h2>
+        <div id="countdown"></div>
+      </section>
+      <section id="seccion4" class="section" data-scroll-spy>
+        <h2>Responsive con JavaScript 📲</h2>
+        <div id="youtube"></div>
+        <div id="gmaps"></div>
+      </section>
+      <section id="seccion5" class="section" data-scroll-spy>
+        <h2>Responsive Tester📲🔧</h2>
+        <form id="responsive-tester">
+          <input name="direccion" type="url" placeholder="URL" required />
+          <br />
+          <input name="ancho" type="text" placeholder="ANCHO" required />
+          <br />
+          <input name="alto" type="text" placeholder="ALTO" required />
+          <br />
+          <br />
+          <input
+            class="btn-tester"
+            name="probar"
+            type="submit"
+            value="Probar"
+          />
+          <input
+            class="btn-tester"
+            name="cerrar"
+            type="button"
+            value="Cerrar"
+          />
+        </form>
+      </section>
+      <section id="seccion6" class="section" data-scroll-spy>
+        <h2>
+          Detección de Dispositivos <br />
+          (User Agent)🕵🏻📱
+        </h2>
+        <div id="user-device"></div>
+      </section>
+      <section id="seccion7" class="section" data-scroll-spy>
+        <h2>Detección del estado de la red📶</h2>
+        <div>
+          <p class="p-estado-red">
+            <b>Nota: </b>
+            <i>
+              Para comprobar que ésto funciona, puede desconectarse de la red de
+              internet manualmente, y luego volver a conectarse.👇</i
+            >
+          </p>
+          <div id="estado-red"></div>
+        </div>
+      </section>
+      <section id="seccion8" class="section" data-scroll-spy>
+        <h2>Detección de la WebCam📸</h2>
+        <video id="webcam"></video>
+      </section>
+      <section id="seccion9" class="section" data-scroll-spy>
+        <h2>Detección de la Geolocalización🌎</h2>
+        <div id="geolocation"></div>
+      </section>
+      <section id="seccion10" class="section" data-scroll-spy>
+        <h2>Filtros de Búsqueda🔎</h2>
+        <input type="text" placeholder="Buscar..." class="card-filter" />
+        <article class="cards">
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/nature" alt="Nature" />
+            <figcaption>Nature</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/any" alt="Any" />
+            <figcaption>Any</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/tech" alt="Tech" />
+            <figcaption>Tech</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/animals" alt="Animals" />
+            <figcaption>Animals</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/people" alt="People" />
+            <figcaption>People</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://placeimg.com/200/200/arch" alt="Arch" />
+            <figcaption>Architecture</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section id="seccion11" class="section" data-scroll-spy>
+        <h2>Sorteo Digital🎲</h2>
+        <ul class="players">
+          <li class="player">
+            JavaScript<img src="./assets/javaScript.png" alt="JavaScript" />
+          </li>
+          <li class="player">PHP<img src="./assets/php.png" alt="PHP" /></li>
+          <li class="player">JAVA<img src="./assets/java.png" alt="JAVA" /></li>
+          <li class="player">C<img src="./assets/c.png" alt="C" /></li>
+          <li class="player">
+            Python<img src="./assets/python.png" alt="Python" />
+          </li>
+          <li class="player">Ruby<img src="./assets/ruby.png" alt="Ruby" /></li>
+          <li class="player">Go<img src="./assets/go.png" alt="Go" /></li>
+          <li class="player">
+            Visual Basic<img
+              src="./assets/visualBasic.png"
+              alt="Visual Basic"
+            />
+          </li>
+          <li class="player">Rust<img src="./assets/rust.png" alt="Rust" /></li>
+          <li class="player">
+            Perl<img src="./assets/perl.webp" alt="Perl" />
+          </li>
+        </ul>
+        <button class="btn" id="winner-btn">Obtener Ganador</button>
+      </section>
+      <section id="seccion12" class="section" data-scroll-spy>
+        <h2>Responsive Slider✅</h2>
+        <div class="slider">
+          <div class="slider-slides">
+            <div class="slider-slide active">
+              <img src="https://placeimg.com/800/800/arch" alt="Arch" />
+            </div>
+            <div class="slider-slide">
+              <img src="https://placeimg.com/800/800/people" alt="People" />
+            </div>
+            <div class="slider-slide">
+              <img src="https://placeimg.com/800/800/nature" alt="Nature" />
+            </div>
+            <div class="slider-slide">
+              <img src="https://placeimg.com/800/800/tech" alt="Tech" />
+            </div>
+            <div class="slider-slide">
+              <img src="https://placeimg.com/800/800/any" alt="Any" />
+            </div>
+            <div class="slider-slide">
+              <img src="https://placeimg.com/800/800/sport" alt="Sport" />
+            </div>
+          </div>
+          <div class="slider-btns">
+            <a class="prev" href="#"
+              ><img src="./assets/rowLeft.png" alt="Left"
+            /></a>
+            <a class="next" href="#"
+              ><img src="./assets/rowRight.png" alt="Right"
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section id="seccion13" class="section" data-scroll-spy>
+        <h2>Seccion 13</h2>
+      </section>
+      <section id="seccion14" class="section" data-scroll-spy>
+        <h2>Seccion 14</h2>
+      </section>
+      <section id="seccion15" class="section" data-scroll-spy>
+        <h2>Seccion 15</h2>
+      </section>
+    </main>
+    <button class="scroll-top-btn hidden">&#11014;</button>
+    <button class="dark-theme-btn">🌚</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="index_dom.js" type="module"></script>
+  </body>
+</html>
