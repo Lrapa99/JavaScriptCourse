@@ -67,6 +67,7 @@ img {
   text-align: center;
 }
 .btn,
+input[type="submit"],
 .btn-tester {
   padding: 1rem;
   font-weight: bold;
@@ -75,6 +76,7 @@ img {
   border-radius: 1rem;
 }
 .btn:hover,
+input[type="submit"]:hover,
 .btn-tester:hover {
   cursor: pointer;
   background-color: var(--btn-colorHover);
@@ -290,6 +292,7 @@ img {
 /* Responsive Tester */
 
 input[type="text"],
+input[type="email"],
 input[type="url"] {
   width: 50%;
   padding: 12px 20px;
@@ -485,6 +488,11 @@ input[type="url"] {
   background-color: var(--btn-color);
 }
 
+/* Video Inteligente */
+video {
+  width: 100%;
+}
+
 /* ScrollSpy */
 
 @media screen and (min-width: 1024px) {
@@ -540,5 +548,94 @@ input[type="url"] {
   .scroll-top-btn {
     right: initial;
     left: calc(4.25rem + 1vw);
+  }
+  video {
+    width: 70%;
+  }
+}
+
+/* ContactForm */
+
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  width: 50%;
+}
+
+.contact-form textarea {
+  width: 50%;
+  resize: none;
+}
+.contact-form input[type="submit"] {
+  width: 50%;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+  -webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+  -webkit-animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
   }
 }
