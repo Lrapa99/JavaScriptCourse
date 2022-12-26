@@ -42,7 +42,7 @@
         <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
         <a href="#seccion13" data-scroll-spy>Video Inteligente</a>
         <a href="#seccion14" data-scroll-spy>Validación de Formularios</a>
-        <a href="#seccion15" data-scroll-spy>Seccion 15</a>
+        <a href="#seccion15" data-scroll-spy>Narrador (Lector de Voz)</a>
       </nav>
     </aside>
     <main>
@@ -231,7 +231,12 @@
       </section>
       <section id="seccion14" class="section" data-scroll-spy>
         <h2>Validación de Formularios con HTML5📝</h2>
-        <form class="contact-form">
+        <form
+          class="contact-form"
+          target="_blank"
+          action="https://formsubmit.co/luisrapalino88@gmail.com"
+          method="POST"
+        >
           <legend>Envianos tus comentarios</legend>
           <input
             type="text"
@@ -266,7 +271,7 @@
             required
           ></textarea>
           <input type="submit" value="Enviar" />
-          <div class="contact-form--loader none">
+          <div class="contact-form-loader none">
             <img src="./assets/loader.svg" width="60px" alt="Cargando" />
           </div>
           <div class="contact-form-response none">
@@ -275,7 +280,19 @@
         </form>
       </section>
       <section id="seccion15" class="section" data-scroll-spy>
-        <h2>Seccion 15</h2>
+        <h2>Narrador (Lector de Voz)🗣️</h2>
+        <div class="select">
+          <select id="speech-select">
+            <option value="">---Elige una Voz---</option>
+          </select>
+        </div>
+        <textarea
+          id="speech-text"
+          cols="50"
+          rows="5"
+          placeholder="Ingresa texto para leerlo..."
+        ></textarea>
+        <button class="btn" id="speech-btn">Leer Texto</button>
       </section>
     </main>
     <button class="scroll-top-btn hidden">&#11014;</button>

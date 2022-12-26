@@ -1,3 +1,5 @@
+import alertsPersonalizadas from "./alerts_personalizadas.js";
+
 const d = document;
 
 export default function contactFormValidations() {
@@ -34,5 +36,23 @@ export default function contactFormValidations() {
           : d.getElementById($input.name).classList.remove("is-active");
       }
     }
+  });
+
+  d.addEventListener("submit", (e) => {
+    // e.preventDefault();
+    // alert("Enviando formulario");
+
+    const $loader = d.querySelector(".contact-form-loader"),
+      $response = d.querySelector(".contact-form-response");
+
+    $loader.classList.remove("none");
+
+    setTimeout(() => {
+      $loader.classList.add("none");
+      alertsPersonalizadas("Se ha enviado el formulario");
+      // $response.classList.remove("none");
+      $form.reset();
+      // setTimeout(() => $response.classList.add("none"), 3000);
+    }, 3000);
   });
 }
