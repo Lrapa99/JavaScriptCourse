@@ -26,7 +26,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   alarm("assets/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
   countdown(
     "countdown",
-    "Jan 1, 2023 00:00:00",
+    "Jan 1, 2024 00:00:00",
     "Para Año Nuevo...",
     "Feliz Año Nuevo!!🤘😊"
   );
