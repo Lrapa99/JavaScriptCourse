@@ -24,6 +24,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.by {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 *,
 *::before,
 *::after {
@@ -152,7 +159,6 @@ input[type="submit"]:hover,
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  height: 100vh;
 }
 
 .menu a {
@@ -517,6 +523,7 @@ video {
     grid-area: header;
   }
   .panel {
+    height: 100vh;
     grid-area: panel;
     align-self: start;
     position: sticky;
@@ -530,6 +537,9 @@ video {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
+  }
+  .by {
+    margin-top: 4rem;
   }
 
   .panel-btn {
